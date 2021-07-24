@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<script type="text/javascript" src="script.js"></script>
 	</head>
 	<body>
 		<form id="data">
@@ -10,18 +9,20 @@
 			<input type="number" id="numMeasures" placeholder="Number of Measures"><br />
 			<label>Number of Beats Per Measure</label>
 			<div>
-				<input type="radio" name="numBeats" id="numBeats">2</input>
-				<input type="radio" name="numBeats" id="numBeats">3</input>
-				<input type="radio" name="numBeats" id="numBeats" checked>4</input>
-				<input type="radio" name="numBeats" id="numBeats">6</input>
+				<input type="radio" name="numBeats" value="2">2</input>
+				<input type="radio" name="numBeats" value="3">3</input>
+				<input type="radio" name="numBeats" value="4" checked>4</input>
+				<input type="radio" name="numBeats" value="6">6</input>
 			</div><br />
 			<label>Key Quality</label>
 			<div>
-				<input type="radio" name="quality" id="quality" checked>Major</input>
-				<input type="radio" name="quality" id="quality">Minor</input>
+				<input type="radio" name="quality" value="major" checked>Major</input>
+				<input type="radio" name="quality" value="minor" id="quality">Minor</input>
 			</div><br />
 		</form>
-		<button type="button">Generate Song</button><br />
+		<button type="button" onclick="generateSong();">Generate Song</button><br />
 		<canvas id="music" height="1000px" style="border: 1px solid black;"></canvas>
+		
+		<script type="text/javascript" src="script.js"></script>
 	</body>
 </html>

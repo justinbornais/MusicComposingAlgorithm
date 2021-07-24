@@ -1,4 +1,4 @@
-var notes =["Ab", "A", "A#", "Bb", "B", "B#", "Cb", "C", "C#", "Db", "D", "D#", "Eb", "E", "E#", "Fb", "F", "F#", "Gb", "G", "G#"];
+var notes = ["Ab", "A", "A#", "Bb", "B", "B#", "Cb", "C", "C#", "Db", "D", "D#", "Eb", "E", "E#", "Fb", "F", "F#", "Gb", "G", "G#"];
 
 // Declare all key scales (multidimensional arrays in the order: major, natural minor, harmonic minor, melodic minor ascending).
 var keys = [[['Ab','Bb','C','Db','Eb','F','G','Ab'], ['Ab','Bb','Cb','Db','Eb','Fb','Gb','Ab'], ['Ab','Bb','Cb','Db','Eb','Fb','G','Ab'], ['Ab','Bb','Cb','Db','Eb','F','G','Ab']], //Ab
@@ -19,4 +19,25 @@ var keys = [[['Ab','Bb','C','Db','Eb','F','G','Ab'], ['Ab','Bb','Cb','Db','Eb','
 			[['F','G','A','Bb','C','D','E','F'], ['F','G','Ab','Bb','C','Db','Eb','F'], ['F','G','Ab','Bb','C','Db','E','F'], ['F','G','Ab','Bb','C','D','E','F']],  // F
 			[['F#','G#','A#','B','C#','D#','E#','F#'], ['F#','G#','A','B','C#','D','E','F#'], ['F#','G#','A','B','C#','D','E#','F#'], ['F#','G#','A','B','C#','D#','E#','F#']],  // F#
 			[['G','A','B','C','D','E','F','G'], ['G','A','Bb','C','D','Eb','F','G'], ['G','A','Bb','C','D','Eb','F#','G'], ['G','A','Bb','C','D','E','F#','G']]]; // G
+			
+function simpleSong(numMeasures, numBeats, keyQuality) {
+	
+}
 
+function generateSong() {
+	
+	numMeasures = document.getElementById("numMeasures").value;
+	numBeats = findSelection("numBeats");
+	keyQuality = findSelection("quality");
+	console.log(numMeasures + " " + numBeats + " " + keyQuality);
+}
+
+function findSelection(field) {
+    var test = document.getElementsByName(field);
+    var sizes = test.length;
+    for (i=0; i < sizes; i++) {
+        if (test[i].checked==true) {  
+            return test[i].value;
+        }
+    }
+}
